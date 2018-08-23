@@ -1,0 +1,6 @@
+<h3>Add a New User</h3>
+<%= form_with model: @user do |form| %>
+  <p>Name: <%= form.text_field :name %></p>
+  <p>Class: <%= form.select :gym_class_id, GymClass.all.map { |gymclass| [ gymclass.name, gymclass.id ] } %></p>
+  <%= form.submit %>
+  <% end %>
